@@ -1,8 +1,10 @@
-module com.example.group3_tomjerry {
+module game {
     requires javafx.controls;
     requires javafx.fxml;
 
+    requires org.kordamp.ikonli.javafx;
 
-    opens com.example.group3_tomjerry to javafx.fxml;
-    exports com.example.group3_tomjerry;
+    opens game to javafx.fxml;
+    opens game.controller to javafx.fxml,javafx.controls;
+    exports game;
 }

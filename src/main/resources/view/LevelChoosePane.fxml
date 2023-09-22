@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="930.0" stylesheets="@../css/GamePane.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="game.controller.LevelController">
+   <children>
+      <ImageView fitHeight="712.0" fitWidth="939.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/bk.png" />
+         </image>
+      </ImageView>
+
+      <Button layoutX="355.0" layoutY="356.0" mnemonicParsing="false" onAction="#Leve1Action" prefHeight="39.0" prefWidth="272.0" text="EASY" />
+      <Button layoutX="358.0" layoutY="434.0" mnemonicParsing="false" onAction="#Leve2Action" prefHeight="39.0" prefWidth="272.0" text="HARD" />
+      <ImageView fitHeight="74.0" fitWidth="51.0" layoutX="862.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/help.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="512.0" layoutX="239.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Tom&amp;Jerry.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="69.0" layoutX="855.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Tutorial.png" />
+         </image>
+      </ImageView>
+
+      <Button layoutX="868.0" layoutY="12.0" mnemonicParsing="false" onAction="#helpAction" opacity="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+
+AnchorPane
+{
+    -fx-background-color: White;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(231, 98, 98, 0.12),100, 0, 0, 10 );
+    -fx-background-insets: 9;
+}
+
+
+.closeButton:hover{
+    -fx-image: url('/img/CloseIconHover.png');
+    -fx-opacity: 1;
+}
+
+
+/* 默认状态下的按钮样式 */
+.button {
+    -fx-background-color: #f666b7; /* 按钮背景颜色 */
+    -fx-text-fill: white; /* 文本颜色 */
+    -fx-font-size: 14px; /* 字体大小 */
+    -fx-padding: 10px 20px; /* 内边距 */
+    -fx-border-radius: 20px; /* 圆角 */
+    -fx-background-radius: 20px;
+}
+
+/* 鼠标悬停状态下的按钮样式 */
+.button:hover {
+    -fx-background-color: #ff0093; /* 按钮背景颜色 */
+    -fx-text-fill: white; /* 文本颜色 */
+}
+
+.losePane{
+    -fx-background-color: rgba(255, 255, 255, 0.78);
+}
