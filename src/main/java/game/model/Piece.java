@@ -49,8 +49,29 @@ public class Piece  extends StackPane {
 
         }
 
-        //3代表老鼠
+        //3代表陷阱
         if (flag == 3){
+            ImageView imageView = getImg(GameConfig.PIECE_SIZE,GameConfig.PIECE_SIZE,GameConfig.trapPath);
+            this.getChildren().add(imageView);
+
+        }
+
+        //4代表瓜子
+        if (flag == 4){
+            ImageView imageView = getImg(GameConfig.PIECE_SIZE,GameConfig.PIECE_SIZE,GameConfig.seedPath);
+            this.getChildren().add(imageView);
+
+        }
+
+        //5代表奶酪
+        if (flag == 5){
+            ImageView imageView = getImg(GameConfig.PIECE_SIZE,GameConfig.PIECE_SIZE,GameConfig.cheesePath);
+            this.getChildren().add(imageView);
+
+        }
+
+        //6代表老鼠
+        if (flag == 6){
             ImageView imageView = getImg(GameConfig.PIECE_SIZE,GameConfig.PIECE_SIZE,GameConfig.mouseWalkNormalPath);
             this.getChildren().add(imageView);
 

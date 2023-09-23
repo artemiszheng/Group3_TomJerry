@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import javafx.scene.input.KeyCode;
 
 /**
 游戏类：封装了一些游戏相关的方法
@@ -61,4 +62,5 @@ public class Game {
         }
 
     }
+
 }

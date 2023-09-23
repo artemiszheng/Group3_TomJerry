@@ -26,5 +26,7 @@ public class GameConfig {
 
     public static String wallPath = null;
 
+    public static String trapPath = null;
 
+    public static String seedPath = null;
 }

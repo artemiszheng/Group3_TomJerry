@@ -86,6 +86,8 @@ public class GameController implements Initializable {
             GameConfig.mouseWalkNormalPath = String.valueOf(new File("src/main/resources/img/mouse_walk.gif").toURI().toURL());
             GameConfig.cheesePath = String.valueOf(new File("src/main/resources/img/cheese.png").toURI().toURL());
             GameConfig.wallPath = String.valueOf(new File("src/main/resources/img/wall1.png").toURI().toURL());
+            GameConfig.trapPath = String.valueOf(new File("src/main/resources/img/trap.png").toURI().toURL());
+            GameConfig.seedPath = String.valueOf(new File("src/main/resources/img/seed.png").toURI().toURL());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
