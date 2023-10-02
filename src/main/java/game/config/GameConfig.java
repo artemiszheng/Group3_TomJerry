@@ -1,5 +1,7 @@
 package game.config;
 
+import javafx.scene.shape.Rectangle;
+
 /**
  * 游戏配置类：存放一些游戏相关的全局变量和常亮
  **/
@@ -14,7 +16,7 @@ public class GameConfig {
     public static final int PIECE_SIZE = 30;    // 每块大小
 
     public static int[][] StringMap = new int[ROW][COL];
-
+    public static int[][] BeforeStringMap = new int[ROW][COL];
     public static int level = 1;
 
     //游戏图片路径
@@ -29,4 +31,11 @@ public class GameConfig {
     public static String trapPath = null;
 
     public static String seedPath = null;
+    public static String heartPath = null;
+    public static String pressbarPath1 = null;
+    public static String pressbarPath2 = null;
+    public static String pressbarPath3 = null;
+
+    public static Rectangle viewArea=new Rectangle(60,60);
+
 }

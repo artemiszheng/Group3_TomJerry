@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="930.0" stylesheets="@../css/GamePane.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.controller.HelpController">
+   <children>
+      <ImageView fitHeight="712.0" fitWidth="939.0" opacity="0.53" pickOnBounds="true">
+         <image>
+            <Image url="@../img/bk.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="51.0" layoutX="862.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/help.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="868.0" layoutY="12.0" mnemonicParsing="false" onAction="#backAction" opacity="0.0" />
+      <ImageView fitHeight="578.0" fitWidth="778.0" layoutX="86.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/teach.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="72.0" layoutX="861.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

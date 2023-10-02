@@ -30,7 +30,7 @@ public class WindowUtil {
     public static void ChangeScreen(String newViewName) {
         Stage stage = Application.stage;
         try {
-            URL url = new File("src/main/resources/view/" + newViewName + ".fxml").toURI().toURL();
+            URL url = new File("view/" + newViewName + ".fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(url);
 
 
@@ -46,7 +46,7 @@ public class WindowUtil {
 
             stage.setTitle("Tom&Jerry");
             //添加icon
-            URL imageUrl = new File("src/main/resources/img/cat.gif").toURI().toURL();
+            URL imageUrl = new File("img/cat.gif").toURI().toURL();
 
             Image image = new Image(String.valueOf(imageUrl));
             stage.getIcons().add(image);
@@ -78,7 +78,7 @@ public class WindowUtil {
         alert.setTitle("warn");
         URL imageUrl = null;
         try {
-            imageUrl = new File("src/main/resources/image/Publisher_material/Display_1.jpg").toURI().toURL();
+            imageUrl = new File("image/Publisher_material/Display_1.jpg").toURI().toURL();
         } catch (MalformedURLException e) {
             throw  new RuntimeException(e);
         }
@@ -109,7 +109,7 @@ public class WindowUtil {
         alert.setTitle("warn");
         URL imageUrl = null;
         try {
-            imageUrl = new File("src/main/resources/image/Publisher_material/Display_1.jpg").toURI().toURL();
+            imageUrl = new File("image/Publisher_material/Display_1.jpg").toURI().toURL();
         } catch (MalformedURLException e) {
             throw  new RuntimeException(e);
         }
@@ -134,7 +134,7 @@ public class WindowUtil {
         dialog.setHeaderText("content");
         URL imageUrl = null;
         try {
-            imageUrl = new File("src/main/resources/image/Publisher_material/Display_1.jpg").toURI().toURL();
+            imageUrl = new File("image/Publisher_material/Display_1.jpg").toURI().toURL();
         } catch (MalformedURLException e) {
             throw  new RuntimeException(e);
         }
