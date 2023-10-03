@@ -343,7 +343,8 @@ public class GameController implements Initializable {
                     if(k.getCode().toString().equals("RIGHT")){
                         if((mouseCol+mouseStep)<GameConfig.COL){
                             flag=GameConfig.StringMap[mouseRow][mouseCol+mouseStep];
-                            if(flag!=0){
+                            int flag1=GameConfig.StringMap[mouseRow][mouseCol+1];
+                            if(flag!=0&&flag1!=0){
                                 GameConfig.viewArea.setLayoutX((mouseCol+mouseStep)*GameConfig.PIECE_SIZE);
                                 GameConfig.StringMap[mouseRow][mouseCol+mouseStep]=6;
                                 GameConfig.StringMap[mouseRow][mouseCol]=1;
@@ -353,7 +354,8 @@ public class GameController implements Initializable {
                     }else if(k.getCode().toString().equals("LEFT")){
                         if(mouseCol-mouseStep>=0){
                             flag=GameConfig.StringMap[mouseRow][mouseCol-mouseStep];
-                            if(flag!=0){
+                            int flag1=GameConfig.StringMap[mouseRow][mouseCol-1];
+                            if(flag!=0&&flag1!=0){
                                 GameConfig.viewArea.setLayoutX((mouseCol-mouseStep-1)*GameConfig.PIECE_SIZE);
                                 GameConfig.StringMap[mouseRow][mouseCol-mouseStep]=6;
                                 GameConfig.StringMap[mouseRow][mouseCol]=1;
@@ -364,7 +366,8 @@ public class GameController implements Initializable {
                     }else if(k.getCode().toString().equals("UP")){
                         if((mouseRow-mouseStep)>=0){
                             flag=GameConfig.StringMap[mouseRow-1][mouseCol];
-                            if(flag!=0){
+                            int flag1=GameConfig.StringMap[mouseRow-1][mouseCol];
+                            if(flag!=0&&flag1!=0){
                                 GameConfig.viewArea.setLayoutY((mouseRow-mouseStep-1)*GameConfig.PIECE_SIZE);
                                 GameConfig.StringMap[mouseRow-mouseStep][mouseCol]=6;
                                 GameConfig.StringMap[mouseRow][mouseCol]=1;
@@ -375,7 +378,8 @@ public class GameController implements Initializable {
                     }else if(k.getCode().toString().equals("DOWN")){
                         if((mouseRow+mouseStep)<GameConfig.ROW){
                             flag=GameConfig.StringMap[mouseRow+mouseStep][mouseCol];
-                            if(flag!=0){
+                            int flag1=GameConfig.StringMap[mouseRow+1][mouseCol];
+                            if(flag!=0&&flag1!=0){
                                 GameConfig.viewArea.setLayoutY((mouseRow+mouseStep)*GameConfig.PIECE_SIZE);
                                 GameConfig.StringMap[mouseRow+mouseStep][mouseCol]=6;
                                 GameConfig.StringMap[mouseRow][mouseCol]=1;

@@ -38,7 +38,7 @@ public class Piece  extends StackPane {
         if(flag!=6&&!GameConfig.viewArea.getBoundsInParent().intersects(new Rectangle(col*GameConfig.PIECE_SIZE, row*GameConfig.PIECE_SIZE, GameConfig.PIECE_SIZE,GameConfig.PIECE_SIZE).getBoundsInLocal())){
             Rectangle rect = new Rectangle(GameConfig.PIECE_SIZE,GameConfig.PIECE_SIZE);
             //设置透明度
-            rect.setOpacity(0.8);
+            rect.setOpacity(0.95);
             this.getChildren().add(rect);
         }
 
