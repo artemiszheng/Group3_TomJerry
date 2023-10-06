@@ -1,6 +1,7 @@
 package game;
 
 import game.model.Game;
+import game.util.SoundEffect;
 import game.util.WindowUtil;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
@@ -15,6 +16,8 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         this.stage = stage;
         WindowUtil.ChangeScreen("WelcomePane");
+        SoundEffect.BACKMUSIC.setToLoop();
+        SoundEffect.BACKMUSIC.play();
     }
 
     public static void main(String[] args) {

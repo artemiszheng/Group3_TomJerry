@@ -62,6 +62,79 @@ public class WindowUtil {
         }
     }
 
+
+
+    public static void newWinPane() {
+        Stage stage = Application.stage;
+        try {
+            URL url = new File("src/main/resources/view/" + "WinPane" + ".fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(url);
+
+
+            AnchorPane anchorPane = null;
+
+            Scene scene = null;
+
+            anchorPane = fxmlLoader.load();
+
+
+            scene = new Scene(anchorPane);
+
+
+            stage.setTitle("WIN");
+            //添加icon
+            URL imageUrl = new File("img/cat.gif").toURI().toURL();
+
+            Image image = new Image(String.valueOf(imageUrl));
+            stage.getIcons().add(image);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+
+
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void newLoosePane() {
+        Stage stage = Application.stage;
+        try {
+            URL url = new File("src/main/resources/view/" + "LoosePane" + ".fxml").toURI().toURL();
+            FXMLLoader fxmlLoader = new FXMLLoader(url);
+
+
+            AnchorPane anchorPane = null;
+
+            Scene scene = null;
+
+            anchorPane = fxmlLoader.load();
+
+
+            scene = new Scene(anchorPane);
+
+
+            stage.setTitle("LOOSE");
+            //添加icon
+            URL imageUrl = new File("img/cat.gif").toURI().toURL();
+
+            Image image = new Image(String.valueOf(imageUrl));
+            stage.getIcons().add(image);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+
+
+
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Pop frame information
      * 弹框信息

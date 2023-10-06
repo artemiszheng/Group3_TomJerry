@@ -13,9 +13,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import game.Application;
 import game.config.GameConfig;
 import game.model.Game;
 import game.model.Piece;
+import game.util.SoundEffect;
 import game.util.WindowUtil;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
@@ -30,6 +32,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
+import javafx.stage.WindowEvent;
 
 /**
  * gamePane controller
@@ -43,9 +46,15 @@ public class GameController implements Initializable {
     private Pane loadingPane;
 
     @FXML
+    private Pane winPane;
+
+    @FXML
+    private Pane loosePane2;
+
+    @FXML
     private AnchorPane ap;
     private Piece[][]gameMap =new Piece[GameConfig.ROW][GameConfig.COL];
-    int seconds = 2;//倒计时三秒
+    int seconds = 1;//倒计时三秒
     int startmouseRow=0;
     int startmouseCol=0;
     int mouseRow=0;
@@ -55,7 +64,7 @@ public class GameController implements Initializable {
     Random r=new Random();
     int catMoveDirection=0;
     MediaPlayer mplayer;
-    int mouseLive=6;
+    int mouseLive=4;
     @FXML
     private Text timeText;
     int meetTomTimes=0;
@@ -74,7 +83,10 @@ public class GameController implements Initializable {
     private Button pauseBtn;
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+        // 设置窗口关闭事件处理器
+        Application.stage.setOnCloseRequest((WindowEvent event) -> {
+            System.exit(0);
+        });
         Timer timer = new Timer();
         Platform.runLater(new Runnable() {
             @Override
@@ -101,7 +113,7 @@ public class GameController implements Initializable {
                             meetTomTimes--;
                         }else{
                             try {
-                                GameConfig.mouseWalkNormalPath = String.valueOf(new File("img/mouse_walk.gif").toURI().toURL());
+                                GameConfig.mouseWalkNormalPath = String.valueOf(new File(GameConfig.chooseMousePath).toURI().toURL());
                             } catch (MalformedURLException e) {
                                 e.printStackTrace();
                             }
@@ -193,7 +205,8 @@ public class GameController implements Initializable {
 
                             refreshGamePane();
                             refreshViewArea();
-                            playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/meettom_smile.MP3");
+//                            playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/meettom_smile.MP3");
+                            SoundEffect.MEETOM_SMILE.play();
                             meetTomTimes=3;
                         }
 
@@ -225,11 +238,19 @@ public class GameController implements Initializable {
         }
     }
     private void gameOver(){
-        if(time<=0||mouseLive==0){
+        if(time==0||mouseLive==0){
+            WindowUtil.newLoosePane();
             service.shutdownNow();
-            playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/loose_game.MP3");
-            WindowUtil.alertInfo("You Lose!");
-            System.exit(0);
+            SoundEffect.BACKMUSIC.stop();
+            SoundEffect.LOOSEMUSIC.play();
+//            playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/loose_game.MP3");
+
+
+//            loosePane2.setVisible(true);
+
+
+//            WindowUtil.alertInfo("You Lose!");
+//            System.exit(0);
             return;
         }
     }
@@ -264,10 +285,10 @@ public class GameController implements Initializable {
      * 播放音乐方法
      */
     public void playMusic(String bmg) {
-        if (mplayer != null)
-            mplayer.stop();
-        mplayer = new MediaPlayer(new Media(bmg));
-        mplayer.play();
+//        if (mplayer != null)
+//            mplayer.stop();
+//        mplayer = new MediaPlayer(new Media(bmg));
+//        mplayer.play();
 
     }
     private void changeCatDirection(){
@@ -277,7 +298,10 @@ public class GameController implements Initializable {
         try {
 
             GameConfig.catPath = String.valueOf(new File("img/cat.gif").toURI().toURL());
-            GameConfig.mouseWalkNormalPath = String.valueOf(new File("img/mouse_walk.gif").toURI().toURL());
+            if(GameConfig.chooseMousePath.equals("")){
+                GameConfig.chooseMousePath = "img/mouse_walk.gif";
+            }
+            GameConfig.mouseWalkNormalPath = String.valueOf(new File(GameConfig.chooseMousePath).toURI().toURL());
             GameConfig.cheesePath = String.valueOf(new File("img/cheese.png").toURI().toURL());
             GameConfig.wallPath = String.valueOf(new File("img/wall1.png").toURI().toURL());
             GameConfig.trapPath = String.valueOf(new File("img/trap.png").toURI().toURL());
@@ -397,18 +421,24 @@ public class GameController implements Initializable {
                     //踩到陷阱,生命减1
                     if(flag==3){
                         trapStopCount=4;
-                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/meet_trap.MP3");
+//                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/meet_trap.MP3");
+                        SoundEffect.MEET_TRAP.play();
                         mouseLive--;
                         refreshLiveImage();
                     }else if(flag==4){
-                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/Heal_seed.MP3");
+                        SoundEffect.HEAL_SEED.play();
+//                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/Heal_seed.MP3");
                         mouseLive++;
                         refreshLiveImage();
                     }else if(flag==5){
                         service.shutdownNow();
-                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/win_music.MP3");
-                        WindowUtil.alertInfo("You Win!");
-                        System.exit(0);
+//                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/win_music.MP3");
+//                        WindowUtil.alertInfo("You Win!");
+//                        winPane.setVisible(true);
+                        WindowUtil.newWinPane();
+                        SoundEffect.BACKMUSIC.stop();
+                        SoundEffect.WINMUSIC.play();
+//                        System.exit(0);
                     }
                     refreshGamePane();
                     refreshViewArea();
@@ -435,7 +465,8 @@ public class GameController implements Initializable {
                     if(pause)return;
                     ap.getChildren().remove(tempImage);
                     if(mouseEatSeed(e.getX(), e.getY())!=null){
-                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/Heal_seed.MP3");
+//                        playMusic("file://"+directory.getAbsolutePath().toString().replace('\\', '/')+ "/music/Heal_seed.MP3");
+                        SoundEffect.HEAL_SEED.play();
                         mouseLive++;
                         GameConfig.StringMap[tempPiece.getRow()][tempPiece.getCol()]=1;
                         refreshLiveImage();

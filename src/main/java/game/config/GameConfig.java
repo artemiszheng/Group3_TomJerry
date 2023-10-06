@@ -36,6 +36,8 @@ public class GameConfig {
     public static String pressbarPath2 = null;
     public static String pressbarPath3 = null;
 
+    public static String chooseMousePath ="";
+
     public static Rectangle viewArea=new Rectangle(60,60);
 
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1079.0" style="-fx-background-color: white;" stylesheets="@../css/GamePane.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.controller.LoosePaneController">
+   <children>
+      <Pane fx:id="loosePane2" layoutX="10.0" layoutY="10.0" prefHeight="618.0" prefWidth="1079.0">
+         <children>
+            <ImageView fitHeight="618.0" fitWidth="1079.0" layoutX="240.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/loose_700px.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
