@@ -5,19 +5,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="930.0" stylesheets="@../css/GamePane.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.controller.HelpController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="930.0" stylesheets="@../css/GamePane.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.controller.HelpController">
    <children>
       <ImageView fitHeight="712.0" fitWidth="939.0" opacity="0.53" pickOnBounds="true">
          <image>
             <Image url="@../img/bk.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="74.0" fitWidth="51.0" layoutX="862.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="48.0" fitWidth="73.0" layoutX="851.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Desktop/PIS/mine-clearance/src/main/resources/img/Back.png" />
+            <Image url="@../../mine-clearance/src/main/resources/img/Back.png" />
          </image>
       </ImageView>
-      <Button layoutX="857.0" layoutY="12.0" mnemonicParsing="false" onAction="#backAction" opacity="0.0" prefHeight="38.0" prefWidth="54.0" />
+      <Button layoutX="850.0" layoutY="12.0" mnemonicParsing="false" onAction="#backAction" opacity="0.0" prefHeight="38.0" prefWidth="61.0" />
       <ImageView fitHeight="578.0" fitWidth="778.0" layoutX="86.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/teach.png" />
