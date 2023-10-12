@@ -8,7 +8,12 @@ A window come up when player win or loose the game.
 
 **How to play:**
 Use button(direction button): up, down, left and right for move.
+
 Use mouse swipe to change the mouses’ color.
+
 Press control to run.
+
 Press R as fast as you can for help mouse escape from the trap (Fill the progress bar).
+
 Use mouse drag and drop the seed for heal the mouse.
+
