@@ -3,8 +3,11 @@ It's a 2D game where players assume the role of a mouse. Players have the option
 
 **State indicator:**
 “Heart” shows the number of lifes the players still have.
+
 “Clock” shows time remainning.
+
 A window come up when player win or loose the game.
+
 
 **How to play:**
 Use button(direction button): up, down, left and right for move.
